@@ -52,9 +52,35 @@ class UserController {
 
     static async googleSign(req, res, next){
         try {
-            
+            let { id_token } = req.body
+            const client = new OAuth2Client(process.env.CLIENT_ID)
+
+            let ticket = client.verifyIdToken({
+                idToken: id_token,
+                audience: process.env.CLIENT_ID
+            })
+
+            const payload = ticket.getPayload()
+            let email = payload.email
+
+            let user = User.findOne({ where: { email} })
+            if(user) return user
+            else{
+                let newUser = User.create({
+                    email, password
+                })
+
+                const token = generateToken({
+                    id: newUser.id,
+                    email: newUser.email
+                })
+
+                res.status(201).json({ token })
+            }
+
+
         } catch (error) {
-            
+            next(error)
         }
     }
 }
