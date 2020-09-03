@@ -78,7 +78,7 @@ function onSignIn(googleUser) {
     let id_token = googleUser.getAuthResponse().id_token
 
     $.ajax({
-        url: `${baseUrl}/users/googleSign`,
+        url: `${baseUrl}/googleSign`,
         method: 'post',
         data: {
             id_token
