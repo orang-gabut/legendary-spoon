@@ -45,7 +45,7 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: hsl(243, 80%, 62%);
+            background-color: darkblue;
             transform-origin: bottom right;
             transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
         }
@@ -69,18 +69,38 @@
             border: none;
             padding: 0vh;
         }
+        button:focus {
+            outline-width: 0vh;
+            color: darkblue;
+        }
+        .footer {
+            font-family: 'Cormorant Garamond', serif;
+            color:hsl(222, 25%, 14%);
+        }
+        footer {
+            position: fixed;
+            bottom: 5vh;
+        }
     </style>
 </head>
 <body>
 
     <!-- before -->
-    <section id="before-page" class="before">
-        <div style="margin-left: 25vh; margin-top: 18vh; margin-right: 40vh">
+    <section id="before-page" class="before" style="margin-left: 25vh; margin-top: 18vh; margin-right: 32vh; margin-bottom: 15vh;">
+        <div>
             <h1 style="text-align: justify">Kalian bingung mau ngapain? Di rumah udah ga ada kerjaan yang bisa dilakukan? Berasa seperti <span class="outlined" style="font-size: 8vh;">kentang</span>?</h1>
         </div>
         <button onclick="toRegister()" class="borderLeftRight buttonz">Yuk Daftar</button>
         <button onclick="toLogin()" class="borderLeftRight buttonz">Login</button>
     </section>
+    <div style="text-align: center;">
+        <button class="borderLeftRight buttonz">Yuk, cek disini!</button>
+    </div>
+    <footer>
+        <div style="text-align: center; width: 100%; height: 100%; width: 100vw">
+            <h3 class="footer">&copy Legendary Spoon 2020</h3>
+        </div>
+    </footer>
 
     <!-- login -->
     <section id="login-page">
