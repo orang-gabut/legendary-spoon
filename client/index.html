@@ -86,10 +86,12 @@
 <body>
 
     <!-- before -->
-    <section class="before" style="margin-left: 25vh; margin-top: 18vh; margin-right: 32vh; margin-bottom: 15vh;">
+    <section id="before-page" class="before" style="margin-left: 25vh; margin-top: 18vh; margin-right: 32vh; margin-bottom: 15vh;">
         <div>
             <h1 style="text-align: justify">Kalian bingung mau ngapain? Di rumah udah ga ada kerjaan yang bisa dilakukan? Berasa seperti <span class="outlined" style="font-size: 8vh;">kentang</span>?</h1>
         </div>
+        <button onclick="toRegister()" class="borderLeftRight buttonz">Yuk Daftar</button>
+        <button onclick="toLogin()" class="borderLeftRight buttonz">Login</button>
     </section>
     <div style="text-align: center;">
         <button class="borderLeftRight buttonz">Yuk, cek disini!</button>
@@ -101,16 +103,16 @@
     </footer>
 
     <!-- login -->
-    <section>
-        <form>
+    <section id="login-page">
+        <form onsubmit="loginForm(event)">
             <div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
+                  <input type="password" class="form-control" id="login-password">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
@@ -118,16 +120,16 @@
     </section>
 
     <!-- register -->
-    <section>
-        <form>
+    <section id="register-page">
+        <form onsubmit="registrationForm(event)">
             <div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input type="email" class="form-control" id="register-email" aria-describedby="emailHelp">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
+                  <input type="password" class="form-control" id="register-password">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
@@ -135,7 +137,9 @@
     </section>
 
     <!-- home -->
-    <!-- disini tampilin gif -->
+    <!-- disini tampilin gif
+    <h1>HERE</h1>
+    <img src="https://media3.giphy.com/media/13juRqPzSYGLT2/giphy.gif?cid=248ed823dvsw1bkbzl87c7d1zy2kcxbh2u5k011w0kp9reu3&rid=giphy.gif" alt="giphy" width="750"> -->
     <!-- disini tampilin activity name -->
     <!-- disini logout button -->
 
@@ -143,8 +147,6 @@
     <script src="main.js"></script>
 
     <div>
-        <h1>HERE</h1>
-        <img src="https://media3.giphy.com/media/13juRqPzSYGLT2/giphy.gif?cid=248ed823dvsw1bkbzl87c7d1zy2kcxbh2u5k011w0kp9reu3&rid=giphy.gif" alt="giphy" width="750">
 
 </body>
 </html>
