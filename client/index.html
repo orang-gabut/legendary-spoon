@@ -4,10 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legendary Spoon</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        .container-login-form {
+            height: 100vh;
+            align-items: center;
+        }
+        .login-form {
+            height: 54vh;
+        }
+        .outlined {
+            -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: darkblue;
+        }
+        h1 {
+            font-family: 'Archivo Black', sans-serif;
+            color: darkblue;
+            font-size: 8vh;
+        }
+        .buttonz {
+            font-family: 'Cormorant Garamond', serif;
+            color: darkblue;
+            font-size: 5vh;
+        }
+        .borderLeftRight {
+            display: inline-block;
+            position: relative;
+            color: hsl(222, 25%, 14%);
+        }
+        
+        .borderLeftRight::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: hsl(243, 80%, 62%);
+            transform-origin: bottom right;
+            transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        
+        .borderLeftRight:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        p {
+            font-family: 'Roboto', sans-serif;
+        }
+        * {
+            background-color: whitesmoke;
+            color: darkblue;
+        }
+        .before {
+            justify-content: center;
+        }
+        button {
+            border: none;
+            padding: 0vh;
+        }
+    </style>
 </head>
 <body>
+
+    <!-- before -->
+    <section class="before">
+        <div style="margin-left: 25vh; margin-top: 18vh; margin-right: 40vh">
+            <h1 style="text-align: justify">Kalian bingung mau ngapain? Di rumah udah ga ada kerjaan yang bisa dilakukan? Berasa seperti <span class="outlined" style="font-size: 8vh;">kentang</span>?</h1>
+        </div>
+    </section>
+        <button class="borderLeftRight buttonz">Yuk Daftar</button>
+
+    <!-- login -->
+    <section>
+        <form>
+            <div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- register -->
+    <section>
+        <form>
+            <div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- home -->
+    <!-- disini tampilin gif -->
+    <!-- disini tampilin activity name -->
+    <!-- disini logout button -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+
     <div>
         <h1>HERE</h1>
         <img src="https://media3.giphy.com/media/13juRqPzSYGLT2/giphy.gif?cid=248ed823dvsw1bkbzl87c7d1zy2kcxbh2u5k011w0kp9reu3&rid=giphy.gif" alt="giphy" width="750">
+
 </body>
 </html>
