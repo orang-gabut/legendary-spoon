@@ -73,3 +73,25 @@ function registrationForm(event) {
 
     })
 }
+
+function onSignIn(googleUser) {
+
+    let id_token = googleUser.getAuthResponse().id_token
+    console.log(id_token)
+
+    $.ajax({
+        url: `${baseUrl}/googleSign`,
+        method: 'post',
+        data: {
+            id_token
+        }
+    })
+        .done(data => {
+            localStorage.setItem('token', data.token)
+            auth()
+        })
+        .fail(err => {
+            console.log(err)
+        })
+}
+  
