@@ -13,12 +13,17 @@ function auth() {
         $('#home-page').show();
         $('#before-page').hide();
         $('#choices-page').hide();
+        $('#activity-page').hide();
+        $('#jokes-page').hide();
+
     } else {
         $('#login-page').hide();
         $('#register-page').hide();
         $('#before-page').show();
         $('#home-page').hide();
         $('#choices-page').hide();
+        $('#activity-page').hide();
+        $('#jokes-page').hide();
     }
 }
 
@@ -34,6 +39,24 @@ function toLogin() {
     $('#register-page').hide();
     $('#choices-page').hide();
     $('#before-page').hide();
+}
+
+function toJokes() {
+    $('#home-page').hide();
+    $('#activity-page').hide();
+    $('#jokes-page').show();
+}
+
+function toBored() {
+    $('#home-page').hide();
+    $('#activity-page').show();
+    $('#jokes-page').hide();
+}
+
+function toHome() {
+    $('#home-page').show();
+    $('#activity-page').hide();
+    $('#jokes-page').hide();
 }
 
 function toRegister() {
@@ -117,11 +140,13 @@ function random(event) {
         }
     }).done(data => {
         console.log(data.activity);
-        $('#bored-activity').empty();
-        $('#bored-activity').append(`
-            <p>${data.activity}</p>
-            <input type="text" class="form-control" id="activity-forGiphy" value="${data.activity}" hidden>
-        `);
+        $('#bored-activity').text(data.activity)
+        $('#activity-forGiphy').text(data.activity)
+        // $('#bored-activity').empty();
+        // $('#bored-activity').append(`
+        //     <p>${data.activity}</p>
+        //     <input type="text" class="form-control" id="activity-forGiphy" value="${data.activity}" hidden>
+        // `);
         showGiphy(event);
     }).fail(err => {
         console.log(err);
@@ -146,10 +171,11 @@ function showGiphy(event) {
         let random = Math.round(Math.random() * 10)
         console.log(data.data[random].images.original.url)
         let url = data.data[random].images.original.url
-        $('#show-giphy').empty();
-        $('#show-giphy').append(`
-            <img src="${url}" alt="giphy">
-        `);
+        $('#show-giphy').attr('src', url)
+        // $('#show-giphy').empty();
+        // $('#show-giphy').append(`
+        //     <img src="${url}" alt="giphy">
+        // `);
     }).fail(err => {
         console.log(err)
     }).always(_ => {

@@ -242,6 +242,8 @@
     <section id="home-page">
         <!-- show buttons mau activity ato jokes -->
         <div style="text-align: right;">
+            <button onclick="toJokes()" class="borderLeftRight buttonz">Jokes</button>
+            <button onclick="toBored()" class="borderLeftRight buttonz">Bored</button>
             <button onclick="logout()" class="borderLeftRight buttonz" style="margin-top: 2vh; margin-right: 2vw;">Logout</button>
         </div>
         </div>
@@ -249,40 +251,42 @@
     </section>
 
     <!-- Activity Section -->
+    <section id="activity-page">
+
     <!-- choice activity -->
-    <section>
-        <!-- disini buat button pilih activity apa aja -->
-    </section>
+        <section>
+            <!-- disini buat button pilih activity apa aja -->
+        </section>
 
     <!-- random activity -->
+        <section id="show-activity">
+            <div style="text-align: right;">
+                <button onclick="toHome()" class="borderLeftRight buttonz">Back</button>
+            </div>
+            <h1>LEARN HOW TO:</h1>
+            <div style="text-align: center;">
+                <button onclick="random(event)" class="borderLeftRight buttonz">Random Activity!</button>
+            </div>
+            <div style="text-align:center">
+                <p id="bored-activity"></p>
+                <input type="text" class="form-control" id="activity-forGiphy" value="" hidden>
+            </div>
+            <div>
+                <img id="show-giphy" src="">
+            </div>
+        </section>
+
+    <!-- chosen activity
     <section>
-        <h1>LEARN HOW TO:</h1>
-        <div style="text-align: center;">
-            <button onclick="random(event)" class="borderLeftRight buttonz">Random Activity!</button>
-        </div>
-        <div id="bored-activity" style="text-align:center">
-            
-        </div>
-        <div id="show-giphy">
-            
-        </div>
+
+    </section> -->
     </section>
-
-    <!-- chosen activity -->
-    <section>
-
-    </section>
-
-    <!-- yg di bwh ini yg di comment apus aja kalo ga dipake @kak aji hehe thanks! -->
-        <!-- disini tampilin gif -->
-        <!-- <h1>HERE</h1> -->
-        <!-- <img src="https://media3.giphy.com/media/13juRqPzSYGLT2/giphy.gif?cid=248ed823dvsw1bkbzl87c7d1zy2kcxbh2u5k011w0kp9reu3&rid=giphy.gif" alt="giphy" width="750"> -->
-        <!-- disini tampilin activity name -->
-        <!-- disini logout button -->
 
     <!-- Jokes Section -->
     <section id="jokes-page">
-        <button onclick="getJokes()" class="borderLeftRight buttonz">Get Jokes</button>
+        <div style="text-align: right;">
+            <button onclick="toHome()" class="borderLeftRight buttonz">Back</button>
+        </div>
         <div style="text-align: center;">
             <h1>QUESTION:</h1>
             <p id="setup-jokes" value="What do you call sad coffee?" style="font-size: 4vh;"></p>
