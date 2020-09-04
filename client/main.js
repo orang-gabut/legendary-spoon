@@ -119,10 +119,10 @@ function getJokes(){
     .done(data => {
         console.log(data)
         let setup = data.setup
-        let puchline = data.punchline
+        let punchline = data.punchline
 
         $('#setup-jokes').text(setup)
-        $('#puchline').text(puchline)
+        $('#punchline').text(punchline)
     })
     .fail(err => {
         
