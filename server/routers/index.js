@@ -11,5 +11,6 @@ route.use('/jokes', routerJokes);
 
 route.post('/register', userController.register)
 route.post('/login', userController.login)
+route.post('/googleSign', userController.googleSign)
 
 module.exports = route

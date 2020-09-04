@@ -75,10 +75,12 @@ function registrationForm(event) {
 }
 
 function onSignIn(googleUser) {
+
     let id_token = googleUser.getAuthResponse().id_token
+    console.log(id_token)
 
     $.ajax({
-        url: `${baseUrl}/users/googleSign`,
+        url: `${baseUrl}/googleSign`,
         method: 'post',
         data: {
             id_token
@@ -92,3 +94,4 @@ function onSignIn(googleUser) {
             console.log(err)
         })
 }
+  
