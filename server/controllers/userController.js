@@ -67,7 +67,13 @@ class UserController {
 
             let user = await User.findOne({ where: { email} })
             console.log(user)
-            if(user) return user
+            if(user) {
+                const token = generateToken({
+                    id: user.id,
+                    email: user.email
+                })
+                res.status(201).json({ token })
+            } //return user 
             else{
                 let newUser = User.create({
                     email, password: 'googleSign'
