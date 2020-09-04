@@ -45,12 +45,14 @@ function toJokes() {
     $('#home-page').hide();
     $('#activity-page').hide();
     $('#jokes-page').show();
+    getJokes();
 }
 
 function toBored() {
     $('#home-page').hide();
     $('#activity-page').show();
     $('#jokes-page').hide();
+    random(event);
 }
 
 function toHome() {
@@ -100,7 +102,7 @@ function registrationForm(event) {
             password
         }
     }).done(_ => {
-        auth()
+        toLogin()
     }).fail(err => {
         console.log(err);
     }).always(_ => {
