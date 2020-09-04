@@ -262,9 +262,14 @@
     <section id="jokes-page">
         <button onclick="getJokes()" style="align-content: center; cursor: pointer;">Get Jokes</button>
         <div style="text-align: center;">
-            <h1>Jokes</h1>
-            <p id="setup-jokes" value="What do you call sad coffee?"> </p>
-            <h2 id="punchline" value="Despresso."></h2>
+            <h1>QUESTION:</h1>
+            <p id="setup-jokes" value="What do you call sad coffee?" style="font-size: 4vh;"></p>
+            <button onclick="showPunchline()" id="answer-button" class="borderLeftRight buttonz">Reveal Answer</button>
+            <h1 id="punchline" value="Despresso."></h1>
+        </div>
+        <div style="text-align: center; margin-top: 8vh;">
+            <button onclick="getJokes()" class="borderLeftRight buttonz">Seriously not cringe-y enough? Click here for more.</button>
+            <h3>Don't regret your choice. We've warned you.</h3>
         </div>
     </section>
 
