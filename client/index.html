@@ -82,7 +82,8 @@
             color: darkblue;
         }
         .footer {
-            font-family: 'Cormorant Garamond', serif;
+            /* font-family: 'Cormorant Garamond', serif; */
+            font-family: 'Archivo Black', sans-serif;
             color:hsl(222, 25%, 14%);
         }
         footer {
@@ -147,6 +148,7 @@
     <!-- before -->
     <section id="before-page">
         <div class="before middle">
+            <!-- <h1 style="text-align: justify">Bored? Feeling down or tired? Don't know what else to do at home? People call you a couch <span class="outlined" style="font-size: 8vh;">potato</span>?</h1> -->
             <h1 style="text-align: justify">Kalian bingung mau ngapain? Di rumah udah ga ada kerjaan yang bisa dilakukan? Berasa seperti <span class="outlined" style="font-size: 8vh;">kentang</span>?</h1>
         </div>
         <div style="text-align: center;">
@@ -199,6 +201,9 @@
                     <input type="password" class="no-outline" id="login-password" style="width: 23vw" placeholder="123abcDEF">
                 </div>
             </div>
+            <div class="middle" style="margin-top: 0vh; margin-bottom: 0vh; text-align: center;">
+                <p id="errortext" style="color:red"></p>
+            </div>
             <div style="text-align: center; margin-top: 9vh;">
                 <button type="submit" class="borderLeftRight buttonz">Login</button>
             </div>  
@@ -234,7 +239,7 @@
     <!-- footer ini mestinya selalu muncul -->
     <footer>
         <div style="text-align: center; width: 100%; height: 100%; width: 100vw">
-            <h3 class="footer">&copy Legendary Spoon 2020</h3>
+            <h3 class="footer">&copy Legendary Spoon Co.</h3>
         </div>
     </footer>
 
@@ -242,10 +247,21 @@
     <section id="home-page">
         <!-- show buttons mau activity ato jokes -->
         <div style="text-align: right;">
-            <button onclick="toJokes()" class="borderLeftRight buttonz">Jokes</button>
-            <button onclick="toBored()" class="borderLeftRight buttonz">Bored</button>
             <button onclick="logout()" class="borderLeftRight buttonz" style="margin-top: 2vh; margin-right: 2vw;">Logout</button>
         </div>
+        <div class="middle" style="margin-top: -1vh;">
+            <h1>So, what do you <span class="outlined">want</span> to do? You're exactly in the right place. <span class="outlined">Totally.</span></h1>
+            <div class="row">
+                <div class="column" style="text-align: center;">
+                    <h1>LAUGH</h1>
+                    <button onclick="toJokes()" class="borderLeftRight buttonz">Get some crack-worthy jokes!</button>
+                </div>
+                <div class="column" style="text-align: center;">
+                    <h1>DO</h1>
+                    <button onclick="toBored()" class="borderLeftRight buttonz">Find a life-changing activity</button>
+                </div>
+              </div>
+            </div>
         </div>
         <div class="bttm"></div>
     </section>
@@ -261,7 +277,7 @@
     <!-- random activity -->
         <section id="show-activity">
             <div style="text-align: right;">
-                <button onclick="toHome()" class="borderLeftRight buttonz" style="margin-right: 83vw">Back</button>
+                <button onclick="toHome()" class="borderLeftRight buttonz" style="margin-right: 81vw">< Back</button>
                 <button onclick="logout()" class="borderLeftRight buttonz" style="margin-top: 2vh; margin-right: 2vw;">Logout</button>
             </div>
             <div class="middle" style="margin-top: 10vh;">
@@ -286,7 +302,7 @@
     <!-- Jokes Section -->
     <section id="jokes-page">
         <div style="text-align: right;">
-            <button onclick="toHome()" class="borderLeftRight buttonz" style="margin-right: 83vw">Back</button>
+            <button onclick="toHome()" class="borderLeftRight buttonz" style="margin-right: 81vw">< Back</button>
             <button onclick="logout()" class="borderLeftRight buttonz" style="margin-top: 2vh; margin-right: 2vw;">Logout</button>
         </div>
         <div class="middle" style="margin-top: 10vh;">
