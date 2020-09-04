@@ -84,6 +84,13 @@ function loginForm(event) {
         auth();
     }).fail(err => {
         console.log(err);
+        let temp = '*'
+        err.responseJSON.errors.forEach(e => {
+            temp += `${e} \n`
+        });
+        if(err){
+            $('#errortext').text(temp)
+        }
     }).always(_ => {
 
     })
@@ -105,6 +112,13 @@ function registrationForm(event) {
         toLogin()
     }).fail(err => {
         console.log(err);
+        let temp = '*'
+        err.responseJSON.errors.forEach(e => {
+            temp += `${e} \n`
+        });
+        if(err){
+            $('#errortext').text(temp)
+        }
     }).always(_ => {
 
     })
