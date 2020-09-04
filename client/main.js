@@ -98,6 +98,7 @@ function onSignIn(googleUser) {
         }
     })
         .done(data => {
+            console.log(data)
             localStorage.setItem('token', data.token)
             auth()
         })
