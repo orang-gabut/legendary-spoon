@@ -27,6 +27,9 @@
             color: darkblue;
             font-size: 8vh;
         }
+        h3 {
+            font-family: 'Cormorant Garamond', serif;
+        }
         .buttonz {
             font-family: 'Cormorant Garamond', serif;
             color: darkblue;
@@ -86,6 +89,7 @@
             padding-bottom: 5vh;
             padding-top: 5vh;
             bottom: 0;
+            z-index: 100;
         }
         .middle {
             margin-left: 25vh; 
@@ -116,8 +120,8 @@
             color:hsl(222, 25%, 14%);
             opacity: 20%;
         }
-        bttm {
-            margin-bottom: 10vh;
+        .bttm {
+            margin-bottom: 20vh;
         }
     </style>
 </head>
@@ -131,6 +135,7 @@
         <div style="text-align: center;">
             <button onclick="toChoices()" class="borderLeftRight buttonz">Check this out!</button>
         </div>
+        <div class="bttm"></div>
     </section>
 
     
@@ -138,46 +143,52 @@
     <section id="choices-page">
         <button onclick="toRegister()" class="borderLeftRight buttonz">Yuk Daftar</button>
         <button onclick="toLogin()" class="borderLeftRight buttonz">Login</button>
+        <div class="bttm"></div>
     </section>
     
     <!-- login -->
     <section id="login-page">
         <h1 class="middle">Are you really sure you have an account, you alien! <span class="outlined">Prove us wrong, we dare you.</span></h1>
         <form onsubmit="loginForm(event)">
-            <div class="form-inline middle" style="justify-content: center; margin-top: 0%; margin-bottom: 0%;">
+            <div class="form-inline middle" style="justify-content: center; margin-top: -5vh; margin-bottom: 0%;">
                 <div>
-                    <label for="login-email">Email: </label>
-                    <input type="email" class="no-outline" id="login-email" style="width: 23vw; margin-right: 5vw;" placeholder="human@mail.com">
+                  <label for="login-email">Email: </label>
+                  <input type="email" class="no-outline" id="login-email" style="width: 23vw; margin-right: 2vw;" placeholder="human@mail.com">
                 </div>
                 <div>
                     <label for="login-password">Password: </label>
                     <input type="password" class="no-outline" id="login-password" style="width: 23vw" placeholder="123abcDEF">
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 5vh;">
-                <button type="submit" class="borderLeftRight buttonz">Submit</button>
+            <div style="text-align: center; margin-top: 9vh;">
+                <button type="submit" class="borderLeftRight buttonz">Login</button>
             </div>
             <div class="g-signin2" data-onsuccess="onSignIn"></div>
         </form>
-        <div class="bttm">
-        </div>
+        <div class="bttm"></div>
     </section>
     
     <!-- register -->
     <section id="register-page">
         <form onsubmit="registrationForm(event)">
-            <div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="register-email" aria-describedby="emailHelp">
+            <div class="middle" style="justify-content: center; margin-top: -5vh; margin-bottom: 0%;">
+                <div>
+                  <h1>Hey there! Seeing that you're here, we suppose <span class="outlined">you do have an email,</span> right?</h1>
+                  <label for="register-email">Email: </label>
+                  <input type="email" class="form-control" id="register-email">
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="register-password">
+                <div>
+                  <h1>And a <span class="outlined">super secure password</span> that we can't guess.</h1>
+                  <h3 style="margin-top: -5vh; font-size: 5vh;">(Or can we?)</h3>
+                  <label for="register-password">Password: </label>
+                  <input type="password" class="form-control" id="register-password">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <div style="text-align: center; margin-top: 9vh;">
+                <button type="submit" class="borderLeftRight buttonz">Register</button>
             </div>
         </form>
+        <div class="bttm"></div>
     </section>
     
     <!-- footer ini mestinya selalu muncul -->
