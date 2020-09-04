@@ -12,23 +12,34 @@ function auth() {
         $('#register-page').hide();
         $('#home-page').show();
         $('#before-page').hide();
+        $('#choices-page').hide();
     } else {
         $('#login-page').hide();
         $('#register-page').hide();
         $('#before-page').show();
         $('#home-page').hide();
+        $('#choices-page').hide();
     }
+}
+
+function toChoices() {
+    $('#login-page').hide();
+    $('#register-page').hide();
+    $('#choices-page').show();
+    $('#before-page').hide();
 }
 
 function toLogin() {
     $('#login-page').show();
     $('#register-page').hide();
+    $('#choices-page').hide();
     $('#before-page').hide();
 }
 
 function toRegister() {
     $('#login-page').hide();
     $('#register-page').show();
+    $('#choices-page').hide();
     $('#before-page').hide();
 }
 
@@ -94,4 +105,12 @@ function onSignIn(googleUser) {
             console.log(err)
         })
 }
-  
+
+function logout() {
+    localStorage.clear()
+    let auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+    auth()
+}
