@@ -155,6 +155,7 @@ function showGiphy(event) {
     }).always(_ => {
 
     })
+}
 
 function getJokes(){
      $.ajax({
