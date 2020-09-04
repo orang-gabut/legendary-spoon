@@ -261,41 +261,45 @@
     <!-- random activity -->
         <section id="show-activity">
             <div style="text-align: right;">
-                <button onclick="toHome()" class="borderLeftRight buttonz">Back</button>
+                <button onclick="toHome()" class="borderLeftRight buttonz" style="margin-right: 83vw">Back</button>
+                <button onclick="logout()" class="borderLeftRight buttonz" style="margin-top: 2vh; margin-right: 2vw;">Logout</button>
             </div>
-            <h1>LEARN HOW TO:</h1>
-            <div style="text-align: center;">
-                <button onclick="random(event)" class="borderLeftRight buttonz">Random Activity!</button>
+            <div class="middle" style="margin-top: 10vh;">
+                <div style="text-align: center;">
+                    <h1>GO AND TRY TO:</h1>
+                    <div style="text-align:center; margin-top: -5vh">
+                        <p id="bored-activity" style="font-size: 4vh;"></p>
+                        <input type="text" class="form-control" id="activity-forGiphy" value="" hidden>
+                    </div>
+                    <div>
+                        <img id="show-giphy" src="">
+                    </div>
+                    <div style="text-align: center; margin-top: 5vh">
+                        <button onclick="random(event)" class="borderLeftRight buttonz">Want a new activity? Click here.</button>
+                    </div>
+                </div>
             </div>
-            <div style="text-align:center">
-                <p id="bored-activity"></p>
-                <input type="text" class="form-control" id="activity-forGiphy" value="" hidden>
-            </div>
-            <div>
-                <img id="show-giphy" src="">
-            </div>
+            <div class="bttm"></div>
         </section>
-
-    <!-- chosen activity
-    <section>
-
-    </section> -->
     </section>
 
     <!-- Jokes Section -->
     <section id="jokes-page">
         <div style="text-align: right;">
-            <button onclick="toHome()" class="borderLeftRight buttonz">Back</button>
+            <button onclick="toHome()" class="borderLeftRight buttonz" style="margin-right: 83vw">Back</button>
+            <button onclick="logout()" class="borderLeftRight buttonz" style="margin-top: 2vh; margin-right: 2vw;">Logout</button>
         </div>
-        <div style="text-align: center;">
-            <h1>QUESTION:</h1>
-            <p id="setup-jokes" value="What do you call sad coffee?" style="font-size: 4vh;"></p>
-            <button onclick="showPunchline()" id="answer-button" class="borderLeftRight buttonz">Reveal Answer</button>
-            <h1 id="punchline" value="Despresso."></h1>
-        </div>
-        <div style="text-align: center; margin-top: 8vh;">
-            <button onclick="getJokes()" class="borderLeftRight buttonz">Seriously not cringe-y enough? Click here for more.</button>
-            <h3>Don't regret your choice. We've warned you.</h3>
+        <div class="middle" style="margin-top: 10vh;">
+            <div style="text-align: center;">
+                <h1>QUESTION:</h1>
+                <p id="setup-jokes" value="What do you call sad coffee?" style="font-size: 4vh;"></p>
+                <button onclick="showPunchline()" id="answer-button" class="borderLeftRight buttonz">Reveal Answer</button>
+                <h1 id="punchline" value="Despresso."></h1>
+            </div>
+            <div style="text-align: center; margin-top: 8vh;">
+                <button onclick="getJokes()" class="borderLeftRight buttonz">Seriously not cringe-y enough? Click here for more.</button>
+                <h3>Don't regret your choice. We've warned you.</h3>
+            </div>
         </div>
         </div>
         <div class="bttm"></div>
