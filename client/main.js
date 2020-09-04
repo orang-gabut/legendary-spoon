@@ -113,7 +113,7 @@ function random(event) {
         url: `${baseUrl}/bored`,
         method: 'get',
         headers: {
-            token: localStorage.token
+        token: localStorage.token
         }
     }).done(data => {
         console.log(data.activity);
@@ -154,6 +154,26 @@ function showGiphy(event) {
         console.log(err)
     }).always(_ => {
 
+    })
+
+function getJokes(){
+     $.ajax({
+        url: `${baseUrl}/jokes`,
+        method: 'get',
+        headers: {
+        token: localStorage.token
+      }
+    })
+    .done(data => {
+        console.log(data)
+        let setup = data.setup
+        let punchline = data.punchline
+
+        $('#setup-jokes').text(setup)
+        $('#punchline').text(punchline)
+    })
+    .fail(err => {
+        
     })
 }
 
