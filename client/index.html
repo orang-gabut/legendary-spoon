@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="759354412871-oh23dqhs5cjji7h008vog08augqi21df.apps.googleusercontent.com">
+    <title>Legendary Spoon</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        .container-login-form {
+            height: 100vh;
+            align-items: center;
+        }
+        .login-form {
+            height: 54vh;
+        }
+        .outlined {
+            -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: darkblue;
+        }
+        h1 {
+            font-family: 'Archivo Black', sans-serif;
+            color: darkblue;
+            font-size: 8vh;
+        }
+        h3 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .buttonz {
+            font-family: 'Cormorant Garamond', serif;
+            color: darkblue;
+            font-size: 5vh;
+            cursor: pointer;
+        }
+        .borderLeftRight {
+            display: inline-block;
+            position: relative;
+            color: hsl(222, 25%, 14%);
+        }
+        
+        .borderLeftRight::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: darkblue;
+            transform-origin: bottom right;
+            transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        
+        .borderLeftRight:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5vh;
+        }
+        p {
+            font-family: 'Roboto', sans-serif;
+        }
+        * {
+            background-color: whitesmoke;
+            color: darkblue;
+        }
+        .before {
+            justify-content: center;
+        }
+        button {
+            border: none;
+            padding: 0vh;
+        }
+        button:focus {
+            outline-width: 0vh;
+            color: darkblue;
+        }
+        .footer {
+            /* font-family: 'Cormorant Garamond', serif; */
+            font-family: 'Archivo Black', sans-serif;
+            color:hsl(222, 25%, 14%);
+        }
+        footer {
+            position: fixed;
+            padding-bottom: 5vh;
+            padding-top: 5vh;
+            bottom: 0;
+            z-index: 100;
+        }
+        .middle {
+            margin-left: 25vh; 
+            margin-top: 18vh; 
+            margin-right: 32vh; 
+            margin-bottom: 13vh;
+        }
+        input {
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-style: groove;
+            border-bottom-color: darkblue;
+            background-color: none;
+            font-family: 'Roboto', sans-serif;
+            font-size: 5vh;
+            color: darkblue;
+        }
+        .no-outline:focus {
+            outline: none;
+        }
+        .form-inline {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+        }
+        ::placeholder { 
+            color:hsl(222, 25%, 14%);
+            opacity: 20%;
+        }
+        .bttm {
+            margin-bottom: 20vh;
+        }
+        /* .column {
+            float: left;
+            width: 50%;
+        } */
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .row {
+            display: flex;
+        }
+        .column {
+            flex: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- before -->
+    <section id="before-page">
+        <div class="before middle">
+            <!-- <h1 style="text-align: justify">Bored? Feeling down or tired? Don't know what else to do at home? People call you a couch <span class="outlined" style="font-size: 8vh;">potato</span>?</h1> -->
+            <h1 style="text-align: justify">Kalian bingung mau ngapain? Di rumah udah ga ada kerjaan yang bisa dilakukan? Berasa seperti <span class="outlined" style="font-size: 8vh;">kentang</span>?</h1>
+        </div>
+        <div style="text-align: center;">
+            <button onclick="toChoices()" class="borderLeftRight buttonz">Check this out!</button>
+        </div>
+        <div class="bttm"></div>
+    </section>
+
+    
+    <!-- choices -->
+    <section id="choices-page">
+        <div class="middle">
+            <h1>Just a few things we gotta ask...</h1>
+            <div class="row">
+                <div class="column" style="margin-right: 10vw;">
+                    <h1 class="outlined" style="margin-top:0;">Are you new?</h1>
+                    <div style="text-align: center;">
+                        <button onclick="toRegister()" class="borderLeftRight buttonz">Register</button>
+                    </div>
+                </div>
+                <div class="column" style="border-left: hsl(222, 25%, 14%); border-left-width: 5px;">
+                    <h1 class="outlined" style="margin-top: 0; padding-left: 4vw;">Um, nope?</h1>
+                    <div style="margin-top: -5vh">
+                        <h3 style="color:hsl(222, 25%, 14%); font-size: 2.5vh; padding-left: 2.7vw;">(Okay, okay we admit we don't know all of you, obv.)</h3>
+                    </div>
+                    <div style="text-align: center;">
+                        <button onclick="toLogin()" class="borderLeftRight buttonz">Login</button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-inline" style="margin-top: 6vh;">
+                <h1 style="font-size: 5.3vh; margin-right: 2vw;">Or do you just love Google that much?</h1>
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            </div>
+        </div>
+        <div class="bttm"></div>
+    </section>
+    
+    <!-- login -->
+    <section id="login-page">
+        <h1 class="middle">Are you really sure you have an account, you alien! <span class="outlined">Prove us wrong, we dare you.</span></h1>
+        <form onsubmit="loginForm(event)">
+            <div class="form-inline middle" style="justify-content: center; margin-top: -5vh; margin-bottom: 0%;">
+                <div>
+                  <label for="login-email">Email: </label>
+                  <input type="email" class="no-outline" id="login-email" style="width: 23vw; margin-right: 2vw;" placeholder="human@mail.com">
+                </div>
+                <div>
+                    <label for="login-password">Password: </label>
+                    <input type="password" class="no-outline" id="login-password" style="width: 23vw" placeholder="123abcDEF">
+                </div>
+            </div>
+            <div class="middle" style="margin-top: 0vh; margin-bottom: 0vh; text-align: center;">
+                <p id="errortext" style="color:red"></p>
+            </div>
+            <div style="text-align: center; margin-top: 9vh;">
+                <button type="submit" class="borderLeftRight buttonz">Login</button>
+            </div>  
+        </form>
+        <div class="bttm"></div>
+    </section>
+    
+    <!-- register -->
+    <section id="register-page">
+        <div class="middle">
+            <form onsubmit="registrationForm(event)">
+                <div style="justify-content: center; margin-top: -5vh; margin-bottom: 0%;">
+                    <div>
+                      <h1>Hey there! Seeing that you're here, we suppose <span class="outlined">you do have an email,</span> right?</h1>
+                      <label for="register-email">Email: </label>
+                      <input type="email" class="no-outline" id="register-email">
+                    </div>
+                    <div>
+                      <h1>And a <span class="outlined">super secure password</span> that we can't guess.</h1>
+                      <h3 style="margin-top: -5vh; font-size: 5vh;">(Or can we?)</h3>
+                      <label for="register-password">Password: </label>
+                      <input type="password" class="no-outline" id="register-password">
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 9vh;">
+                    <button type="submit" class="borderLeftRight buttonz">Register</button>
+                </div>
+            </form>
+        </div>
+        <div class="bttm"></div>
+    </section>
+    
+    <!-- footer ini mestinya selalu muncul -->
+    <footer>
+        <div style="text-align: center; width: 100%; height: 100%; width: 100vw">
+            <h3 class="footer">&copy Legendary Spoon Co.</h3>
+        </div>
+    </footer>
+
+    <!-- home -->
+    <section id="home-page">
+        <!-- show buttons mau activity ato jokes -->
+        <div style="text-align: right;">
+            <button onclick="logout()" class="borderLeftRight buttonz" style="margin-top: 2vh; margin-right: 2vw;">Logout</button>
+        </div>
+        <div class="middle" style="margin-top: -1vh;">
+            <h1>So, what do you <span class="outlined">want</span> to do? You're exactly in the right place. <span class="outlined">Totally.</span></h1>
+            <div class="row">
+                <div class="column" style="text-align: center;">
+                    <h1>LAUGH</h1>
+                    <button onclick="toJokes()" class="borderLeftRight buttonz">Get some crack-worthy jokes!</button>
+                </div>
+                <div class="column" style="text-align: center;">
+                    <h1>DO</h1>
+                    <button onclick="toBored()" class="borderLeftRight buttonz">Find a life-changing activity</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="bttm"></div>
+    </section>
+
+    <!-- Activity Section -->
+    <section id="activity-page">
+
+    <!-- choice activity -->
+        <section>
+            <!-- disini buat button pilih activity apa aja -->
+        </section>
+
+    <!-- random activity -->
+        <section id="show-activity">
+            <div style="text-align: right;">
+                <button onclick="toHome()" class="borderLeftRight buttonz" style="margin-right: 81vw">< Back</button>
+                <button onclick="logout()" class="borderLeftRight buttonz" style="margin-top: 2vh; margin-right: 2vw;">Logout</button>
+            </div>
+            <div class="middle" style="margin-top: 10vh;">
+                <div style="text-align: center;">
+                    <h1>GO AND TRY TO:</h1>
+                    <div style="text-align:center; margin-top: -5vh">
+                        <p id="bored-activity" style="font-size: 4vh;"></p>
+                        <div id="bored-activity-input">
+
+                        </div>
+                    </div>
+                    <div>
+                        <img id="show-giphy" src="">
+                    </div>
+                    <div style="text-align: center; margin-top: 5vh">
+                        <button onclick="random(event)" class="borderLeftRight buttonz">Want a new activity? Click here.</button>
+                    </div>
+                </div>
+            </div>
+            <div class="bttm"></div>
+        </section>
+    </section>
+
+    <!-- Jokes Section -->
+    <section id="jokes-page">
+        <div style="text-align: right;">
+            <button onclick="toHome()" class="borderLeftRight buttonz" style="margin-right: 81vw">< Back</button>
+            <button onclick="logout()" class="borderLeftRight buttonz" style="margin-top: 2vh; margin-right: 2vw;">Logout</button>
+        </div>
+        <div class="middle" style="margin-top: 10vh;">
+            <div style="text-align: center;">
+                <h1>QUESTION:</h1>
+                <p id="setup-jokes" value="What do you call sad coffee?" style="font-size: 4vh;"></p>
+                <button onclick="showPunchline()" id="answer-button" class="borderLeftRight buttonz">Reveal Answer</button>
+                <h1 id="punchline" value="Despresso."></h1>
+            </div>
+            <div style="text-align: center; margin-top: 8vh;">
+                <button onclick="getJokes()" class="borderLeftRight buttonz">Seriously not cringe-y enough? Click here for more.</button>
+                <h3>Don't regret your choice. We've warned you.</h3>
+            </div>
+        </div>
+        </div>
+        <div class="bttm"></div>
+    </section>
+
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="main.js"></script>
+</body>
+</html>
