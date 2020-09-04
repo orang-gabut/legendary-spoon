@@ -107,15 +107,63 @@ function onSignIn(googleUser) {
         })
 }
 
-function getJokes(){
+function random(event) {
+    event.preventDefault();
     $.ajax({
-        url: `${baseUrl}/jokes`,
+        url: `${baseUrl}/bored`,
+        method: 'get',
+        headers: {
+        token: localStorage.token
+        }
+    }).done(data => {
+        console.log(data.activity);
+        $('#bored-activity').empty();
+        $('#bored-activity').append(`
+            <p>${data.activity}</p>
+            <input type="text" class="form-control" id="activity-forGiphy" value="${data.activity}" hidden>
+        `);
+        showGiphy(event);
+    }).fail(err => {
+        console.log(err);
+    }).always(_ => {
+
+    })
+}
+
+function showGiphy(event) {
+    event.preventDefault();
+    let activity = $('#activity-forGiphy').val();
+    $.ajax({
+        url: `${baseUrl}/giphy`,
         method: 'get',
         headers: {
             token: localStorage.token
+        },
+        data: {
+            activity
         }
+    }).done(data => {
+        let random = Math.round(Math.random() * 10)
+        console.log(data.data[random].images.original.url)
+        let url = data.data[random].images.original.url
+        $('#show-giphy').empty();
+        $('#show-giphy').append(`
+            <img src="${url}" alt="giphy">
+        `);
+    }).fail(err => {
+        console.log(err)
+    }).always(_ => {
+
     })
 
+function getJokes(){
+     $.ajax({
+        url: `${baseUrl}/jokes`,
+        method: 'get',
+        headers: {
+        token: localStorage.token
+      }
+    })
     .done(data => {
         console.log(data)
         let setup = data.setup
@@ -127,7 +175,6 @@ function getJokes(){
     .fail(err => {
         
     })
-    
 }
 
 function logout() {
