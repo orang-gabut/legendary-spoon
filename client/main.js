@@ -169,13 +169,19 @@ function getJokes(){
         console.log(data)
         let setup = data.setup
         let punchline = data.punchline
-
+        $('#punchline').hide();
+        $('#answer-button').show();
         $('#setup-jokes').text(setup)
         $('#punchline').text(punchline)
     })
     .fail(err => {
         
     })
+}
+
+function showPunchline() {
+    $('#punchline').show();
+    $('#answer-button').hide();
 }
 
 function logout() {
