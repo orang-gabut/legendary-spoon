@@ -123,6 +123,22 @@
         .bttm {
             margin-bottom: 20vh;
         }
+        /* .column {
+            float: left;
+            width: 50%;
+        } */
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .row {
+            display: flex;
+        }
+        .column {
+            flex: 50%;
+        }
     </style>
 </head>
 <body>
@@ -141,9 +157,30 @@
     
     <!-- choices -->
     <section id="choices-page">
-        <button onclick="toRegister()" class="borderLeftRight buttonz">Yuk Daftar</button>
-        <button onclick="toLogin()" class="borderLeftRight buttonz">Login</button>
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <div class="middle">
+            <h1>Just a few things we gotta ask...</h1>
+            <div class="row">
+                <div class="column" style="margin-right: 10vw;">
+                    <h1 class="outlined" style="margin-top:0;">Are you new?</h1>
+                    <div style="text-align: center;">
+                        <button onclick="toRegister()" class="borderLeftRight buttonz">Register</button>
+                    </div>
+                </div>
+                <div class="column" style="border-left: hsl(222, 25%, 14%); border-left-width: 5px;">
+                    <h1 class="outlined" style="margin-top: 0; padding-left: 4vw;">Um, nope?</h1>
+                    <div style="margin-top: -5vh">
+                        <h3 style="color:hsl(222, 25%, 14%); font-size: 2.5vh; padding-left: 2.7vw;">(Okay, okay we admit we don't know all of you, obv.)</h3>
+                    </div>
+                    <div style="text-align: center;">
+                        <button onclick="toLogin()" class="borderLeftRight buttonz">Login</button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-inline" style="margin-top: 6vh;">
+                <h1 style="font-size: 5.3vh; margin-right: 2vw;">Or do you just love Google that much?</h1>
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            </div>
+        </div>
         <div class="bttm"></div>
     </section>
     
@@ -164,32 +201,32 @@
             <div style="text-align: center; margin-top: 9vh;">
                 <button type="submit" class="borderLeftRight buttonz">Login</button>
             </div>  
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
         </form>
         <div class="bttm"></div>
     </section>
     
     <!-- register -->
     <section id="register-page">
-        <form onsubmit="registrationForm(event)">
-            <div class="middle" style="justify-content: center; margin-top: -5vh; margin-bottom: 0%;">
-                <div>
-                  <h1>Hey there! Seeing that you're here, we suppose <span class="outlined">you do have an email,</span> right?</h1>
-                  <label for="register-email">Email: </label>
-                  <input type="email" class="form-control" id="register-email">
+        <div class="middle">
+            <form onsubmit="registrationForm(event)">
+                <div style="justify-content: center; margin-top: -5vh; margin-bottom: 0%;">
+                    <div>
+                      <h1>Hey there! Seeing that you're here, we suppose <span class="outlined">you do have an email,</span> right?</h1>
+                      <label for="register-email">Email: </label>
+                      <input type="email" class="no-outline" id="register-email">
+                    </div>
+                    <div>
+                      <h1>And a <span class="outlined">super secure password</span> that we can't guess.</h1>
+                      <h3 style="margin-top: -5vh; font-size: 5vh;">(Or can we?)</h3>
+                      <label for="register-password">Password: </label>
+                      <input type="password" class="no-outline" id="register-password">
+                    </div>
                 </div>
-                <div>
-                  <h1>And a <span class="outlined">super secure password</span> that we can't guess.</h1>
-                  <h3 style="margin-top: -5vh; font-size: 5vh;">(Or can we?)</h3>
-                  <label for="register-password">Password: </label>
-                  <input type="password" class="form-control" id="register-password">
+                <div style="text-align: center; margin-top: 9vh;">
+                    <button type="submit" class="borderLeftRight buttonz">Register</button>
                 </div>
-            </div>
-            <div style="text-align: center; margin-top: 9vh;">
-                <button type="submit" class="borderLeftRight buttonz">Register</button>
-            </div>
-        </form>
+            </form>
+        </div>
         <div class="bttm"></div>
     </section>
     
