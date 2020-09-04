@@ -107,6 +107,29 @@ function onSignIn(googleUser) {
         })
 }
 
+function getJokes(){
+    $.ajax({
+        url: `${baseUrl}/jokes`,
+        method: 'get',
+        headers: {
+            token: localStorage.token
+        }
+    })
+
+    .done(data => {
+        console.log(data)
+        let setup = data.setup
+        let puchline = data.punchline
+
+        $('#setup-jokes').text(setup)
+        $('#puchline').text(puchline)
+    })
+    .fail(err => {
+        
+    })
+    
+}
+
 function logout() {
     localStorage.clear()
     let auth2 = gapi.auth2.getAuthInstance();
