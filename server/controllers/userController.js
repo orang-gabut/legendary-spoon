@@ -37,7 +37,7 @@ class UserController {
         try {
             console.log('here')
             const { email, password } = req.body
-
+            console.log(req.body)
             let data = await User.create({
                 email, password
             })

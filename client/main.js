@@ -138,17 +138,15 @@ function random(event) {
         url: `${baseUrl}/bored`,
         method: 'get',
         headers: {
-        token: localStorage.token
+            token: localStorage.token
         }
     }).done(data => {
-        console.log(data.activity);
+        console.log(data.activity, data.type);
         $('#bored-activity').text(data.activity)
-        $('#activity-forGiphy').text(data.activity)
-        // $('#bored-activity').empty();
-        // $('#bored-activity').append(`
-        //     <p>${data.activity}</p>
-        //     <input type="text" class="form-control" id="activity-forGiphy" value="${data.activity}" hidden>
-        // `);
+        $('#bored-activity-input').empty();
+        $('#bored-activity-input').append(`
+        <input type="text" class="form-control" id="activity-forGiphy" value="${data.type}" hidden>
+        `);
         showGiphy(event);
     }).fail(err => {
         console.log(err);
@@ -161,17 +159,14 @@ function showGiphy(event) {
     event.preventDefault();
     let activity = $('#activity-forGiphy').val();
     $.ajax({
-        url: `${baseUrl}/giphy`,
+        url: `${baseUrl}/giphy?activity=${activity}`,
         method: 'get',
         headers: {
             token: localStorage.token
-        },
-        data: {
-            activity
         }
     }).done(data => {
-        let random = Math.round(Math.random() * 10)
-        console.log(data.data[random].images.original.url)
+        let random = Math.round(Math.random() * 50)
+        console.log(data.data[random])
         let url = data.data[random].images.original.url
         $('#show-giphy').attr('src', url)
         // $('#show-giphy').empty();
